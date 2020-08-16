@@ -29,11 +29,11 @@ module Jekyll
     def generate(site)
       @site = site
       site.docs_to_write.each { |doc| process_options doc }
-      site.posts.each { |post| process_options post }
+      site.posts.docs.each { |post| process_options post }
       site.pages.each { |page| process_options page }
 
       site.docs_to_write.each { |doc| render_layouts doc }
-      site.posts.each { |post| render_layouts post }
+      site.posts.docs.each { |post| render_layouts post }
       site.pages.each { |page| render_layouts page }
     end
 
